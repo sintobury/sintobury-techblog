@@ -1,12 +1,4 @@
-.navbar {
-    padding: 20px;
-    background-color: yellowgreen;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-}
-
-.postlist {
+.recentPostlist {
     padding: 20px;
     background-color: beige;
     border-radius: 6px;
