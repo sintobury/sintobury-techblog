@@ -1,8 +1,10 @@
-export const blogTitle : string = 'sintobury tech blog' 
+export const blogTitle:string = 'sintobury tech blog' 
 
-export const navMenu : { name : string ; link : string} [] = [
+export const navMenu:{ name:string ; link:string }[] = [
     { name : 'home', link : '/'},
     { name : 'postlist', link: '/postlist'}
 ]
 
-export const copyright : string = 'Copyright 2024. sintobury All rights reserved'
+export const copyright:string = 'Copyright 2024. sintobury All rights reserved'
+
+export const categoryList:string[] = ['All','Nextjs 블로그 제작기'] 

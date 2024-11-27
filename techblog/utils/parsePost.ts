@@ -3,6 +3,12 @@ import path from 'path'
 import { sync } from 'glob'
 import matter from 'gray-matter'
 
+type postMatter = {
+    title:string;
+    date:Date;
+    description:string;
+}
+
 const basepath = '/posts'
 const postpath = path.join(process.cwd(),basepath)
 
@@ -10,7 +16,9 @@ export const parsePost = async (postPath:string) => {
     const mdx = fs.readFileSync(postPath, 'utf8');
     const { data, content } = matter(mdx);
     const category = await parsePostCategory(postPath)
-    return { ...data, content, category}
+    const frontMatter = data as postMatter
+    //data 타입 지정해줘야 함 ->typescript error 유발
+    return {content, category, ...frontMatter}
 };
 
 export const parsePostCategory = async (path:string) => {

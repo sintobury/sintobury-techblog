@@ -1,13 +1,12 @@
-import { getPostList } from "@/utils/parsePost"
+import PostList from "@/components/postList";
 
 
 export default async function Home() {
-  const postList = await getPostList();
-  console.log(postList)
 
   return (
     <>
       <div className="recentPostlist">
+        <PostList />
       </div>
     </>
   )
