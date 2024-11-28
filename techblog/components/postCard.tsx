@@ -23,7 +23,7 @@ export default function PostCard({post}: Props) {
             <div>
                 <h4>{post.category}</h4>
                 <h3>{post.title}</h3>
-                <h5>{post.date.toString()}</h5>
+                <h5>{post.date.toLocaleDateString('ko-KR')}</h5>
             </div>
         </li>
         </Link>

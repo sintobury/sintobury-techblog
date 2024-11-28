@@ -13,7 +13,7 @@ export default async function Post({searchParams}:props) {
       <div>
         <h2>{post.title}</h2>
         <h4>{post.category}</h4>
-        <h4>{post.date.toString()}</h4>
+        <h4>{post.date.toLocaleDateString('ko-KR')}</h4>
       </div>
       <div>
         <MDXRemote source={post.content}/>
