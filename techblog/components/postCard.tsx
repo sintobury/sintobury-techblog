@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 type Props = {
     post:post
@@ -13,6 +14,7 @@ interface post {
 
 export default function PostCard({post}: Props) {
     return (
+        <Link href={`/post/${post.title}`}>
         <li>
             <div>
                 <img></img>
@@ -23,5 +25,6 @@ export default function PostCard({post}: Props) {
                 <h5>{post.date.toString()}</h5>
             </div>
         </li>
+        </Link>
     )
 }
