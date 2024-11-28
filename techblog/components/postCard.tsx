@@ -10,11 +10,12 @@ interface post {
     title:string;
     date:Date;
     description:string;
+    slug:string;
 }
 
 export default function PostCard({post}: Props) {
     return (
-        <Link href={`/post/${post.title}`}>
+        <Link href={`/post?category=${post.category}&slug=${post.slug}`}>
         <li>
             <div>
                 <img></img>

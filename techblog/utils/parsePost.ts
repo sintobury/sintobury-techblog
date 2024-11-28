@@ -7,6 +7,7 @@ type postMatter = {
     title:string;
     date:Date;
     description:string;
+    slug:string;
 }
 
 const basepath = '/posts'
@@ -21,12 +22,12 @@ export const parsePost = async (postPath:string) => {
     return {content, category, ...frontMatter}
 };
 
-export const parsePostCategory = async (path:string) => {
+const parsePostCategory = async (path:string) => {
     const category = path.slice(path.indexOf(basepath)).split('/')[2];
     return category;
 }
 
-export const getPostPath = (category?:string) => {
+const getPostPath = (category?:string) => {
     const boundary = category || '*'
     const paths:string[] = sync(`${postpath}/${boundary}/**/*.mdx`)
     return paths;
@@ -38,3 +39,8 @@ export const getPostList = async (category?:string) => {
     return posts
 }
 
+export const getPost = async (category:string,slug:string) => {
+    const file = `${postpath}/${category}/${slug}.mdx`
+    const post = parsePost(file);
+    return post
+}
