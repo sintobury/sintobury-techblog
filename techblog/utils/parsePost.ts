@@ -36,7 +36,14 @@ const getPostPath = (category?:string) => {
 export const getPostList = async (category?:string) => {
     const paths = getPostPath(category)
     const posts = Promise.all(paths.map((postpath)=>parsePost(postpath)))
-    return posts
+    const sortedPosts = (await posts).sort((a,b) => {
+        if(a.date < b.date) {
+            return 1; 
+        } else {
+            return -1;
+        }
+    })
+    return sortedPosts
 }
 
 export const getPost = async (category:string,slug:string) => {
