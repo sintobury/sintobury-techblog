@@ -51,3 +51,24 @@ export const getPost = async (category:string,slug:string) => {
     const post = parsePost(file);
     return post
 }
+
+export const getCategoryList = () => {
+    const categoryPaths:string[] = sync(`${postpath}/*`)
+    const categoryList = categoryPaths.map((path)=>path.split('/').slice(-1)?.[0])
+    return categoryList
+}
+
+export const getCategoryListData = async () => {
+    const categoryList = getCategoryList()
+    const categoryListData :{ [key:string]: number } = {}
+    for (const category of categoryList) {
+        categoryListData[category] = await getPostQuantity(category)
+    }
+    return categoryListData
+} 
+
+export const getPostQuantity = async (category?:string) => {
+    const posts = await getPostList(category)
+    const quantity = posts.length
+    return quantity
+}

@@ -1,5 +1,5 @@
 import './post.css'
-import { getPost } from "@/utils/parsePost"
+import { getPost } from "@/utils/post"
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 type props = {

@@ -1,13 +1,19 @@
-import { categoryList } from "@/mock/mockdata"
+import './categoryList.css'
+import { getCategoryListData, getCategoryList, getPostQuantity } from '@/utils/post'
 import Link from "next/link"
 
-export default function CategotyList () {
-
+export default async function CategotyList () {
+    const categorylist = getCategoryList();
+    const categoryData = await getCategoryListData();
+    const allPostQuantity = await getPostQuantity();
     return (
         <ul className="categorylist">
-            {categoryList.map((category:string)=> (
-                <Link href={category === 'All' ? '/blog' :`/blog/${category}`} key={category}>
-                    <li className="category_button">{category}</li>
+            <Link href={'/blog'}>
+                <li className='category_button'>{`All (${allPostQuantity})`}</li>
+            </Link>
+            {categorylist.map((category:string)=> (
+                <Link href={`/blog/${category}`} key={category}>
+                    <li className="category_button">{`${category} (${categoryData[category]})`}</li>
                 </Link>
             ))}
         </ul>

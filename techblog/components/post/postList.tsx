@@ -1,5 +1,5 @@
 import './postList.css'
-import { getPostList } from "@/utils/parsePost";
+import { getPostList } from "@/utils/post";
 import PostCard from "./postCard";
 import CategotyList from './categoryList';
 
