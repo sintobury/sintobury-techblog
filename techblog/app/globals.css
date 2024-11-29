@@ -1,5 +1,54 @@
+body, button, div, fieldset, form, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header {
+    position:fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    max-width: 1280px;
+    width: 100%;
+    background-color: #3d6fb3;
+}
+
+.blog_title {
+    color: #eeeeee;
+}
+
+.content {
+    min-height: calc(100vh - 120px);
+    padding: 80px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .recentPostlist {
     padding: 20px;
     background-color: beige;
     border-radius: 6px;
+}
+
+.footer {
+    height: 40px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    background-color: #1a2f4c;
+}
+
+.copyright {
+    color: #e0e0e0;
 }

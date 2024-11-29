@@ -1,13 +1,9 @@
-import PostList from "@/components/postList";
+import { redirect } from "next/navigation";
 
 
 export default async function Home() {
 
   return (
-    <>
-      <div className="recentPostlist">
-        <PostList />
-      </div>
-    </>
+    redirect('/blog')
   )
 }

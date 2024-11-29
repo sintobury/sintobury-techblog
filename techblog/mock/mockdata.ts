@@ -7,4 +7,4 @@ export const navMenu:{ name:string ; link:string }[] = [
 
 export const copyright:string = 'Copyright 2024. sintobury All rights reserved'
 
-export const categoryList:string[] = ['All','Nextjs 블로그 제작기'] 
+export const categoryList:string[] = ['All','Nextjs_blog'] 

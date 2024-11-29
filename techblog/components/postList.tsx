@@ -1,14 +1,19 @@
+import './postList.css'
 import { getPostList } from "@/utils/parsePost";
 import PostCard from "./postCard";
+import CategotyList from './categoryList';
 
-export default async function PostList () {
+interface postListProps {
+  category?:string;
+}
 
-  const postList = await getPostList();
-  console.log(postList)
+export default async function PostList ({category}:postListProps) {
+  const postList = await getPostList(category);
 
   return (
     <section>
-      <ul>
+      <CategotyList/>
+      <ul className="postlist">
         {postList.map((post)=> (
           <PostCard key={post.slug} post={post}/>
         ))}

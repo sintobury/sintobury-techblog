@@ -28,15 +28,15 @@ const parsePostCategory = async (path:string) => {
 }
 
 const getPostPath = (category?:string) => {
-    const boundary = category || '*'
+    const boundary = category || '**'
     const paths:string[] = sync(`${postpath}/${boundary}/**/*.mdx`)
     return paths;
 } 
 
 export const getPostList = async (category?:string) => {
     const paths = getPostPath(category)
-    const posts = Promise.all(paths.map((postpath)=>parsePost(postpath)))
-    const sortedPosts = (await posts).sort((a,b) => {
+    const posts = await Promise.all(paths.map((postpath)=>parsePost(postpath)))
+    const sortedPosts = (posts).sort((a,b) => {
         if(a.date < b.date) {
             return 1; 
         } else {
