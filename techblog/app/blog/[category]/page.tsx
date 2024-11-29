@@ -1,4 +1,4 @@
-import PostList from "@/components/postList";
+import PostList from "@/components/post/postList";
 
 export default async function CategoryPage({params}:{params:Promise<{category:string}>}) {
     const { category } = await params
