@@ -11,9 +11,9 @@ export default async function PostList ({category}:postListProps) {
   const postList = await getPostList(category);
 
   return (
-    <section>
+    <section className='postList_container'>
       <CategotyList/>
-      <ul className="postlist">
+      <ul className="postList">
         {postList.map((post)=> (
           <PostCard key={post.slug} post={post}/>
         ))}

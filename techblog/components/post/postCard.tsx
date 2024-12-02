@@ -1,3 +1,4 @@
+import './postCard.css'
 import { transferCategoryName } from "@/utils/post";
 import Link from "next/link";
 
