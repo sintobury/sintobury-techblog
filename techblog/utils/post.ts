@@ -72,3 +72,8 @@ export const getPostQuantity = async (category?:string) => {
     const quantity = posts.length
     return quantity
 }
+
+export const transferCategoryName = (category:string) => {
+    const transferedName = category.replace('_',' ')
+    return transferedName;
+}

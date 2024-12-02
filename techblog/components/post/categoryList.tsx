@@ -1,5 +1,5 @@
 import './categoryList.css'
-import { getCategoryListData, getCategoryList, getPostQuantity } from '@/utils/post'
+import { getCategoryListData, getCategoryList, getPostQuantity, transferCategoryName } from '@/utils/post'
 import Link from "next/link"
 
 export default async function CategotyList () {
@@ -13,7 +13,7 @@ export default async function CategotyList () {
             </Link>
             {categorylist.map((category:string)=> (
                 <Link href={`/blog/${category}`} key={category}>
-                    <li className="category_button">{`${category} (${categoryData[category]})`}</li>
+                    <li className="category_button">{`${transferCategoryName(category)} (${categoryData[category]})`}</li>
                 </Link>
             ))}
         </ul>
