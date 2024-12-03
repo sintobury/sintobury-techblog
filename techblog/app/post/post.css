@@ -1,11 +1,17 @@
 .post_container {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
 .post_head {
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.post_body {
+    padding: 20px;
 }
