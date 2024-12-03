@@ -5,12 +5,15 @@
     flex-direction: row;
     align-items: center;
     gap: 16px;
-    background-color: #98bbeb;
 }
 
 .category_button {
     padding: 12px 16px;
     border-radius: 6px;
-    background-color: #3d6fb3;
-    color: #eeeeee;
+    background-color: #98bbeb;
+    &.selected {
+        font-weight: bold;
+        background-color: #3d6fb3;
+        color: #eeeeee;
+    }
 }
